@@ -30,5 +30,5 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Entry extends Model
 {
-    //
+    protected $fillable = ['title', 'description', 'email', 'name', 'info', 'level', 'state_id', 'category_id', 'project_id'];
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Entry;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -38,7 +39,8 @@ class EntryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->get('entry');
+        Entry::create($data);
     }
 
     /**
