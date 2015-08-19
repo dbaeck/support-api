@@ -1,10 +1,26 @@
 @extends('auth.auth')
 
 @section('htmlheader_title')
-    Register
+    LightSupport - Register
 @endsection
 
 @section('content')
+    <body class="register-page">
+    <div class="register-box">
+        <div class="register-logo">
+            <a href="{{ url('/home') }}">Light<b>Support</b></a>
+        </div>
+
+
+        <div class="register-box-body">
+            <p class="login-box-msg">Registration is currently closed!</p>
+            </div>
+        </div>
+    </body>
+
+@endsection
+
+@section('content-x')
 
     <body class="register-page">
     <div class="register-box">

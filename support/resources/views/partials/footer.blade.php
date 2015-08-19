@@ -2,8 +2,8 @@
 <footer class="main-footer">
     <!-- To the right -->
     <div class="pull-right hidden-xs">
-        <a href="https://github.com/acacha/adminlte-laravel"></a><b>admin-lte-laravel</b></a>. A Laravel 5 package that switchs default Laravel scaffolding/boilerplate to AdminLTE template
+        See code at <a href="https://github.com/dbaeck/support-api"><i class="fa fa-github"></i> Github</a>.
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2015 <a href="http://acacha.org">Acacha.org</a>.</strong> Created by <a href="http://acacha.org/sergitur">Sergi Tur Badenas</a>. See code at <a href="https://github.com/acacha/adminlte-laravel">Github</a>
+    <strong>Crafted with <i class="fa fa-heart"></i> &copy; {{ date('Y') }} by <a href="https://0xdb.pw">Daniel Bäck</a>.</strong>
 </footer>

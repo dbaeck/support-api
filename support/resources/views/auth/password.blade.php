@@ -1,7 +1,7 @@
 @extends('auth.auth')
 
 @section('htmlheader_title')
-    Password recovery
+    LightSupport - Password recovery
 @endsection
 
 @section('content')

@@ -4,6 +4,8 @@
     Home
 @endsection
 
+@section('contentheader_title', 'Dashboard')
+
 
 @section('main-content')
 <div class="container">
