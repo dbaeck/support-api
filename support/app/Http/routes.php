@@ -1,14 +1,5 @@
 <?php
 
-
-Route::get('/', function () {
-
-});
-
-Route::get('/home', ['middleware' => 'auth', function () {
-    return view('home');
-}]);
-
 Route::group(['as' => 'api::', 'middleware' => 'api'], function(){
 
     Route::post('new', 'EntryController@store');
@@ -16,7 +7,14 @@ Route::group(['as' => 'api::', 'middleware' => 'api'], function(){
     Route::get('entry', 'EntryController@index');
 });
 
-Route::group(['as' => 'backend::', 'prefix' => 'manage', 'middleware' => 'auth|csrf'], function(){
+Route::group(['as' => 'backend::', 'middleware' => ['auth', 'csrf']], function(){
+    Route::get('home', function(){
+        return view('home');
+    });
+
+    Route::get('/', function(){
+        return view('home');
+    });
 
 });
 
