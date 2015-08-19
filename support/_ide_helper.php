@@ -11889,5 +11889,37 @@ namespace {
     }
 
 
+    class Api extends \App\Facades\Api{
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function authUser($api_key){
+            return \App\Classes\ApiService::authUser($api_key);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function isAuthenticated(){
+            return \App\Classes\ApiService::isAuthenticated();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function user(){
+            return \App\Classes\ApiService::user();
+        }
+        
+    }
+
+
 }
 

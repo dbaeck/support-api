@@ -5,9 +5,9 @@ Route::get('/', function () {
 
 });
 
-Route::get('home', function(){
-    dump('hi');
-});
+Route::get('/home', ['middleware' => 'auth', function () {
+    return view('home');
+}]);
 
 Route::group(['as' => 'api::', 'middleware' => 'api'], function(){
 
@@ -21,11 +21,9 @@ Route::group(['as' => 'backend::', 'prefix' => 'manage', 'middleware' => 'auth|c
 });
 
 
-Route::group(['as' => 'auth::', 'prefix' => 'auth', 'middleware' => 'csrf'], function(){
-    Route::get('login', ['as' => 'login', 'uses' => '\App\Http\Controllers\Auth\AuthController@getLogin']);
-    Route::post('login', ['as' => 'login', 'uses' => '\App\Http\Controllers\Auth\AuthController@postLogin']);
-    Route::get('logout', ['as' => 'logout', 'uses' => '\App\Http\Controllers\Auth\AuthController@getLogout']);
-
-    Route::get('register', ['as' => 'register', 'uses' => '\App\Http\Controllers\Auth\AuthController@getRegister']);
-    Route::post('register', ['as' => 'register', 'uses' => '\App\Http\Controllers\Auth\AuthController@postRegister']);
+Route::group(['middleware' => 'csrf'], function(){
+    Route::controllers([
+        'auth' => 'Auth\AuthController',
+        'password' => 'Auth\PasswordController',
+    ]);
 });
